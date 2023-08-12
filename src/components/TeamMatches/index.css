@@ -8,11 +8,18 @@
   align-items: center;
 }
 .team-banner {
-  width: 75%;
+  width: 76%;
 }
-.latest_match-container {
+
+@media (max-width: 767px) {
+  .team-banner {
+    width: 100%;
+  }
+}
+.latest-match-container {
   width: 78.5%;
-  margin-right: 44px;
+  margin-right: 45px;
+  list-style-type: none;
 }
 
 .heading-container {
@@ -29,6 +36,7 @@
   text-align: start;
 }
 .match-card-container {
+  list-style-type: none;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -58,4 +66,26 @@
 }
 .CSK {
   background-color: #d4c70c;
+}
+
+@media (max-width: 767px) {
+  .team-matches-container {
+    padding: 20px;
+  }
+
+  .latest-match-container {
+    width: 110%;
+  }
+  .heading-container {
+    width: 100%;
+  }
+
+  .match-card-container {
+    width: 120%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0px;
+    align-items: flex-start;
+  }
 }

@@ -1,5 +1,8 @@
 // Write your code here
 import {Component} from 'react'
+import Loader from 'react-loader-spinner'
+
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'
 
 import LatestMatch from '../LatestMatch'
 import TeamCard from '../MatchCard'
@@ -71,21 +74,30 @@ class TeamMatches extends Component {
     const {teamId, teamUrl, latestMatch, matchCard, loader} = this.state
 
     const testId = loader ? 'loader' : ''
+    console.log(loader)
 
     return (
-      <div testid={testId} className={`team-matches-container ${teamId}`}>
-        <img src={teamUrl} alt="team banner" className="team-banner" />
-        <div className="heading-container">
-          <p className="latest-matches">Latest Matches</p>
-        </div>
-        <ul className="latest_match-container">
-          <LatestMatch latestMatch={latestMatch} key={latestMatch.id} />
-        </ul>
-        <ul className="match-card-container">
-          {matchCard.map(eachCard => (
-            <TeamCard eachCard={eachCard} key={eachCard.id} />
-          ))}
-        </ul>
+      <div className={`team-matches-container ${teamId}`}>
+        {loader ? (
+          <div data-testid={testId}>
+            <Loader type="Oval" color="#ffffff" height={50} width={50} />
+          </div>
+        ) : (
+          <>
+            <img src={teamUrl} alt="team banner" className="team-banner" />
+            <div className="heading-container">
+              <p className="latest-matches">Latest Matches</p>
+            </div>
+            <ul className="latest-match-container">
+              <LatestMatch latestMatch={latestMatch} key={latestMatch.id} />
+            </ul>
+            <ul className="match-card-container">
+              {matchCard.map(eachCard => (
+                <TeamCard eachCard={eachCard} key={eachCard.id} />
+              ))}
+            </ul>
+          </>
+        )}
       </div>
     )
   }

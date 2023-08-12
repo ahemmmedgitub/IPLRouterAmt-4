@@ -22,7 +22,6 @@ class Header extends Component {
   getIplTeamList = async () => {
     const response = await fetch('https://apis.ccbp.in/ipl')
     const data = await response.json()
-
     const updatedData = data.teams.map(eachItem => ({
       id: eachItem.id,
       name: eachItem.name,
@@ -40,7 +39,7 @@ class Header extends Component {
     return (
       <div className="home-page-container">
         {isLoading ? (
-          <div testid={testId}>
+          <div data-testid={testId}>
             <Loader type="Oval" color="#ffffff" height={50} width={50} />
           </div>
         ) : (

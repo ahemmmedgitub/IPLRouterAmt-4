@@ -10,6 +10,9 @@
   border-radius: 3px;
   border: 1px solid #ffffff;
 }
+.list-container {
+  list-style-type: none;
+}
 .team-img {
   height: 90px;
   width: 80px;
@@ -20,4 +23,25 @@
   font-size: 20px;
   font-weight: 500;
   color: #ffffff;
+}
+
+@media (max-width: 767px) {
+  .team-card-container {
+    width: 170px;
+    height: 90px;
+    padding: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .team-img {
+    height: 60px;
+    width: 50px;
+  }
+  .team-name {
+    font-size: 16px;
+  }
+}
+.link-item {
+  list-style-type: none;
+  text-decoration: none;
 }

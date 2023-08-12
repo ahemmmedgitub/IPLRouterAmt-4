@@ -6,7 +6,7 @@ const TeamCard = props => {
   const {result, competingTeam, competingTeamLogo, matchStatus} = eachCard
 
   return (
-    <div className="team-card">
+    <li className="team-card">
       <img
         src={competingTeamLogo}
         alt={`competing team ${competingTeam}`}
@@ -15,7 +15,7 @@ const TeamCard = props => {
       <p className="heading">{competingTeam}</p>
       <p className="team-result">{result}</p>
       <p className="match-status">{matchStatus}</p>
-    </div>
+    </li>
   )
 }
 export default TeamCard

@@ -1,5 +1,5 @@
 /* Write your CSS here */
-.latest-match-container {
+.latest-match-container-x {
   background-color: #0f172a;
   background-size: cover;
   padding: 20px;
@@ -8,6 +8,12 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  list-style-type: none;
+}
+.left-img-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 .left-side-text-container {
   width: 280px;
@@ -28,6 +34,9 @@
   font-size: 22px;
   font-weight: 500;
   color: #ffffff;
+}
+.horizontal-line {
+  color: blue;
 }
 .venue {
   font-family: 'Bree Serif';
@@ -61,4 +70,41 @@
   font-size: 14px;
   font-weight: 500;
   color: #ffffff;
+}
+
+@media (max-width: 767px) {
+  .latest-match-container-x {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .horizontal-line {
+    color: #475569;
+    width: 100%;
+  }
+  .right-side-text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 0px;
+  }
+  .innings {
+    font-size: 16px;
+  }
+  .inning-class {
+    font-size: 12px;
+  }
+
+  .com-team-heading {
+    font-size: 22px;
+  }
+  .date {
+    font-size: 18px;
+  }
+  .venue {
+    font-size: 14px;
+  }
+  .result {
+    font-size: 14px;
+  }
 }
